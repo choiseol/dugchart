@@ -1,0 +1,150 @@
+<title>DUGCHART</title>
+	<meta charset="utf-8">
+	<meta name="DUGCHART" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" type="text/css" href="./normalize.css">
+  <link rel="stylesheet" href="./chart1.css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Jua|Nanum+Gothic+Coding:700|Roboto:500,700" rel="stylesheet">
+  <script src="./jquery.touchSlider.js"></script>
+  <script src="./jquery-3.3.1.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>::-webkit-scrollbar {display: none;}
+          html{height: 1800px;}
+          body{overflow-x: hidden; height: 1800px;}
+.ts-controls { height: 50px; background:inherit; position: relative; top:-20px; overflow: hidden; }
+.ts-prev { display:block; width:100px; height:36px; background:#000; opacity:0.5; font-size:16px; color:#fff; font-weight:bold; position:absolute; top:0; left:0; }
+.ts-next { display:block; width:100px; height:36px; background:#000; opacity:0.5; font-size:16px; color:#fff; font-weight:bold; position:absolute; top:0; right:0; }
+
+.ts-paging { width:100%; text-align:center; position:absolute; top:12px; left:0; }
+.ts-paging-btn { display:inline-block; width:20px; height:0; max-height:20px; padding-top:10px; margin-left:7px; border-radius:10px; background:#888; overflow: hidden; }
+.ts-paging-btn:first-child { margin-left: 0; }
+.ts-paging-active { background:#fff; }
+</style>
+
+<!-- jQuery 1.7+, IE 7+ -->
+<script src="./jquery-3.3.1.min.js"></script>
+<script src="./jquery.touchSlider.js"></script>
+
+</head>
+
+<body>
+	<header>
+<div class="login">
+  <ul>
+    <li><a href="#">Sign in</a></li>
+    <li><a href="#">Sign Up</a></li>
+    <li><a href="#">My Page</a></li>
+  </ul>
+</div>
+<header>
+  <h1><a href="./dugmain1.html"><img src="./dugchart logo.svgz"></a></h1>
+</header>
+  
+<nav>
+  <ul>
+    <li><a href="./dugmain1.html">TOP10</a></li>
+    <li><a href="./dugMusic.html">MUSIC</a></li>
+    <li><a href="./dugchart6brand.html">BRAND</a></li>
+		<li><a href="./dugVideo.html">VIDEO</a></li>
+    <li><a href="./dugHash.html">HASHTAG</a></li>
+    <li><a href="./dugComp.html">COMPARISON</a></li>
+    <li><a href="./dugByul.html" style="color:#FF3F3F;text-decoration:underline;">BYUL BYUL&#9733;</a></li>
+  </ul>
+</nav>
+
+<div class="title" style="color: white;"><h2 style="font-family: 'Jua', sans-serif;margin-top:65px;">오늘의 별별&#9733; 차트</h2></div>
+<div class="text" ><h5>스타에 관한 별의 별 차트가 다 있다! 오늘의 별별차트는?</h5></div>
+<div class="bgcolor" style="top:410px;"></div>
+<style>
+.touchSlider9_wrap {overflow:hidden; margin:200px; width:1550px;}
+#touchSlider9 { margin-right:10%; position:relative; overflow:visible; }
+#touchSlider9 ul { position:absolute; top:0; left:0; overflow:hidden; }
+#touchSlider9 ul li { height:800px; text-align: center; cursor:grab;}
+#touchSlider9 ul li h3{font-family: 'Jua', sans-serif; font-size:4em; margin-top: 50px;color:#fec423;  }
+#touchSlider9 ul li p{font-family: 'Nanum Gothic Coding', monospace; text-align: left; font-weight:700; font-size:2em; margin-top: 400px; color:#fff;  float:left;  margin-left:50px;}
+</style>
+
+<div class="touchSlider9_wrap">
+	<h4 style="font-family: 'Jua', sans-serif; font-size:2.3em; margin-bottom:50px; color:#4070c6;">평균나이가 가장 어린 그룹은 누구? 아이돌 평균나이 어린 TOP10!</h4>
+	<div id="touchSlider9">
+		<ul>
+			<li style="background:#e54141;background-size:1400px;">
+				<h3 style="margin-top: 300px; margin-bottom: 50px">아이돌계의 귀여운 막내돌들을 만나보시죠!</h3>
+				<p style="margin-top: 0; margin-left: 360px;">아이돌 평균나이 어린 TOP10! -> 옆으로 넘기기</p>
+			</li> 
+			<li style="background:url(./astr.jpg);background-size:1400px;">
+				<h3>10. ASTRO 21.66세</h3>
+				<p>아이돌 귀욤 막내돌 10위! <br><br>엠제이(25) 진진(23) 차은우(22) 문빈(21) 라키(20) 윤산하(19)</p>
+			</li> 
+			<li style="background:url(./nct.jpg);background-size:1400px;">
+				<h3>9. NCT 21.22세</h3>
+				<p>생각보다 엉아돌! <br><br> 태일(25) 쟈니(24) 태용(24) 유타(24) 쿤(23) 도영(23) 텐(23) 재현(22) 윈윈(22) 정우(21) 루카스(20) 마크(20) 런쥔(19) 제노(19) 해찬(19) 재민(19) 천러(18) 지성(17)</p>
+			</li>
+			<li style="background:url(./mm.jpg);background-size:1400px;">
+				<h3>8. 모모랜드 21세</h3>
+				<p>성숙한 이미지 이지만 막내돌 라인인 모모랜드!<br><br>혜빈(23) 연우(23) 제인(22) 태하(21) 나윤(21) 데이지(20) 주이(20) 아인(20) 낸시(19)</p>
+			</li>
+			<li style="background:url(./idel.jpg);background-size:1400px;">
+				<h3>7. (여자)아이들 20.84세</h3>
+				<p>신인 걸그룹답게 막내돌 라인!<br><br>미연(22) 민니(22) 수진(21) 소연(21) 우기(20) 슈화(19)</p>
+			</li>
+			<li style="background:url(./boys.jpg);background-size:1400px;">
+				<h3>6. 더보이즈 20.83세</h3>
+				<p>강렬한 이미지로 성숙해 보이지만 알고보면 어린 더보이즈!<br><br>상연(23) 제이콥(22) 영훈(22) 현재(22) 주연(21) 케빈(21) 뉴(21) 큐(21) 주학년(20) 활(19) 선우(19) 에릭(19)</p>
+			</li>
+			<li style="background:url(./ps.jpg);background-size:1400px;">
+				<h3>5. PRISTIN 20.81세</h3>
+				<p>파워풀 막내돌!<br><br>나영(24) 로아(22) 유하(22) 은우(21) 결경(21) 예하나(20) 성연(20) 시연(19) 카일라(18)</p>
+			</li>
+			<li style="background:url(./pn.jpg);background-size:1400px;">
+				<h3>4. fromis9 20.2세</h3>
+				<p>아이돌 학교를 졸업하고 이제 막 성인이 되려는 프로미스나인!<br><br>이새롬(22) 송하영(22) 장규리(22) 박지원(21) 노지선(21) 이서연(19) 이채영(19) 이나경(19) 백지헌(16)</p>
+			</li>
+			<li style="background:url(./ap.jpg);background-size:1400px;">
+				<h3>3. April 20.1세</h3>
+				<p>청순하고 예쁜데 막내돌까지!<br><br>윤채경(23) 김채원(22) 이나은(20) 양예나(19) 레이첼(19) 이진솔(18)</p>
+			</li>
+			<li style="background:url(./is.jpg);background-size:1400px;">
+				<h3>2. 이달의소녀 19.91세</h3>
+				<p>귀여워서 기절해!<br><br>비비(23) 이브(22) 진솔(22) 하슬(22) 김립(20) 츄(20) 희진(19) 현진(19) 고원(19) 최리(18) 올리비아혜(18) 여진(17)</p>
+			</li>
+			<li style="background:url(./wm.jpg);background-size:1400px;">
+				<h3>1. 위키미키 19.5세</h3>
+				<p>걸크러쉬 막내! 막내돌 1위는 위키미키입니다!<br><br>지수연(22) 엘리(21) 최유정(20) 김도연(20) 세이(19) 루아(19) 리나(18) 루시(17)</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+$('#touchSlider9').touchSlider({
+	sidePage: true
+});
+</script>
+
+<div class="footer">
+	<hr>
+	<div class="footer1">
+		<ul>
+			<li>회사소개</li>
+			<li>이용약관</li>
+			<li>개인정보처리방침</li>
+			<li>청소년보호정책</li>
+			<li>제휴/프로모션문의</li>
+			<li>파트너센터</li>
+			<li style="margin-right: 1000px;">사업자정보확인</li>
+		</ul>
+	</div>
+	<div class="footer2">
+		<ul>
+			<li>(주)DUGCHART 경기도 안성시 한경로 123(석정동)</li>
+			<li>대표 : 최설</li>
+			<li>사업자등록번호 : 123456789</li>
+			<li>문의전화 : 1566-XXXX(평일 09:00~18:00)</li>
+			<li>e-mail : imini777@gmail.com</li>
+			<li><b>이 웹사이트는 한경대학교 디자인학과 디지털프로젝트 졸업작품입니다.</b></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

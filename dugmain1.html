@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DUGCHART</title>
+  <script src="processing.js"></script>
+	<meta charset="utf-8">
+	<meta name="DUGCHART" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+	<link rel="stylesheet" href="./chart1.css">
+	<link rel="stylesheet" type="text/css" href="./normalize.css">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Nanum+Gothic+Coding:700" rel="stylesheet">
+  <style>::-webkit-scrollbar {display: none;}
+          body{overflow-x: hidden;}</style>
+
+</head>
+
+<body height="1080">
+<header>
+<div class="login">
+  <ul>
+    <li><a href="#">Sign in</a></li>
+    <li><a href="#">Sign Up</a></li>
+    <li><a href="#">My Page</a></li>
+  </ul>
+</div>
+<header>
+  <h1><a href="./dugmain1.html"><img src="./dugchart logo.svgz"></a></h1>
+</header>
+  
+<nav>
+  <ul>
+    <li><a href="./dugmain1.html" style="color:#e54141;text-decoration:underline;">TOP10</a></li>
+    <li><a href="./dugMusic.html">MUSIC</a></li>
+    <li><a href="./dugchart6brand.html">BRAND</a></li>
+		<li><a href="./dugVideo.html">VIDEO</a></li>
+    <li><a href="./dugHash.html">HASHTAG</a></li>
+    <li><a href="./dugComp.html">COMPARISON</a></li>
+    <li><a href="./dugByul.html">BYUL BYUL</a></li>
+  </ul>
+</nav>
+<!-- <div class="title" style="margin-left: 40%; margin-top:-1%; "><h2>주간 TOP10</h2></div> -->
+<main height="1080">
+	<canvas id="myCanvas" width="1920" height="1080"></canvas>
+	<div class="bgimg" style="opacity:0.9;">
+		<svg height="1300" width="1980">
+  		<circle cx="230" cy="400" r="400" fill="#fec423" />
+  		<circle cx="1800" cy="900" r="300" fill="#fec423" />
+  		<circle cx="900" cy="750" r="350" fill="#187eb2" />
+  		<circle cx="1400" cy="100" r="200" fill="#187eb2" />
+		Sorry, your browser does not support inline SVG.</svg>
+    <img src="./bts3.png" style="width:800px;position:absolute; top:250px; left:1200px; opacity:0.7;">
+     <img src="./rv.png" style="width:450px;position:absolute; top:600px; left:100px; opacity:0.8;">
+	</div>
+</main>
+
+<div class="title" style="color: white;"><h2>TOP10 Chart </h2></div>
+<!-- <div class="title2" ><h3>2018년 45주차</h3></div> -->
+<div class="text" ><h5>이번주 DUGCHART 종합차트 TOP10위에 든 아이돌은 누구?</h5></div>
+
+<script data-processing-target="canv" type="text/processing">
+
+int num = 10; 
+Spring[] springs = new Spring[num]; 
+
+void setup() {
+  size(1920, 870);
+  noStroke(); 
+  springs[0] = new Spring(680, 650, 110, 0.98, 9.9, 0.1, springs, 0); 
+  springs[1] = new Spring(1300, 450, 140, 0.98, 9.9, 0.1, springs, 1); 
+  springs[2] = new Spring(1010, 680, 170, 0.98, 9.9, 0.1, springs, 2);
+  springs[3] = new Spring(580, 350, 200, 0.98, 9.9, 0.1, springs, 3);
+  springs[4] = new Spring(650, 230, 230, 0.98, 9.9, 0.1, springs, 4);
+  springs[5] = new Spring(620, 500, 260, 0.98, 9.9, 0.1, springs, 5);
+  springs[6] = new Spring(1110, 500, 300, 0.98, 9.9, 0.1, springs, 6);
+  springs[7] = new Spring(858, 550, 330, 0.98, 9.9, 0.1, springs, 7);
+  springs[8] = new Spring(1130, 280, 370, 0.98, 9.0, 0.1, springs, 8);
+  springs[9] = new Spring(850, 280, 400, 0.98, 9.0, 0.1, springs, 9);
+}
+
+void draw() {
+  background(0,0); 
+
+  for (int k = 0; k < num; k++) { 
+    springs[k].update(); 
+    springs[k].display(k);
+  }
+}
+
+void mousePressed() {
+  for (Spring spring : springs) { 
+    spring.pressed();
+  }
+}
+
+void mouseReleased() {
+  for (Spring spring : springs) { 
+    spring.released();
+  }
+}
+
+class Spring { 
+  // Screen values 
+  float xpos, ypos;
+  float tempxpos, tempypos; 
+  int size = 20; 
+  boolean over = false; 
+  boolean move = false; 
+
+  // Spring simulation constants 
+  float mass;       // Mass 
+  float k = 0.2;    // Spring constant 
+  float damp;       // Damping 
+  float rest_posx;  // Rest position X 
+  float rest_posy;  // Rest position Y 
+
+  // Spring simulation variables 
+  //float pos = 20.0; // Position 
+  float velx = 0.0;   // X Velocity 
+  float vely = 0.0;   // Y Velocity 
+  float accel = 0;    // Acceleration 
+  float force = 0;    // Force 
+
+  Spring[] friends;
+  int me;
+
+  // Constructor
+  Spring(float x, float y, int s, float d, float m, 
+  float k_in, Spring[] others, int id) { 
+    xpos = tempxpos = x; 
+    ypos = tempypos = y;
+    rest_posx = x;
+    rest_posy = y;
+    size = s;
+    damp = d; 
+    mass = m; 
+    k = k_in;
+    friends = others;
+    me = id;
+  } 
+
+  void update() { 
+    if (move) { 
+      rest_posy = mouseY; 
+      rest_posx = mouseX;
+    } 
+
+    force = -k * (tempypos - rest_posy);  // f=-ky 
+    accel = force / mass;                 // Set the acceleration, f=ma == a=f/m 
+    vely = damp * (vely + accel);         // Set the velocity 
+    tempypos = tempypos + vely;           // Updated position 
+
+    force = -k * (tempxpos - rest_posx);  // f=-ky 
+    accel = force / mass;                 // Set the acceleration, f=ma == a=f/m 
+    velx = damp * (velx + accel);         // Set the velocity 
+    tempxpos = tempxpos + velx;           // Updated position 
+
+
+    if ((overEvent() || move) && !otherOver() ) { 
+      over = true;
+    } else { 
+      over = false;
+    }
+  } 
+
+  // Test to see if mouse is over this spring
+  boolean overEvent() {
+    float disX = tempxpos - mouseX;
+    float disY = tempypos - mouseY;
+    if (sqrt(sq(disX) + sq(disY)) < size/2 ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // Make sure no other springs are active
+  boolean otherOver() {
+    for (int i=0; i<num; i++) {
+      if (i != me) {
+        if (friends[i].over == true) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  String[] name = {"(G)IDEL","MAMAMOO","Red Velvet","BLACKPINK","Sunmi","TWICE","Pentagon","IU","BTS","Wanna one"};
+  String[] vote = {"10","9","8","7","6","5","4","3","2","1"};
+  String[] color = {#e54141,#187eb2,#fec423,#e54141,#187eb2,#fec423,#e54141,#187eb2,#fec423,#e54141};
+  void display(int k) {
+   if(over){
+    cursor(HAND);
+   	fill(255);
+    ellipse(tempxpos, tempypos, size, size);
+    fill(color[k]);
+    textSize(size/5-textWidth(name[k])/20);
+    text(name[k], tempxpos-textWidth(name[k])/2, tempypos+size/17);
+	} else{
+  	fill(color[k]);
+    ellipse(tempxpos, tempypos, size, size);
+    fill(255);
+    textSize(size/6);
+    text(vote[k], tempxpos-textWidth(vote[k])/2, tempypos+size/12);}
+  } 
+
+  void pressed() { 
+    if (over) { 
+      move = true;
+    } else { 
+      move = false;
+    }
+  } 
+
+  void released() { 
+    move = false; 
+    rest_posx = xpos;
+    rest_posy = ypos;
+  }
+}
+</script>
+
+
+<script data-processing-target="canvv" type="text/processing">
+  int numBalls = 30;
+float spring = 0.3;
+float gravity = -0.001;
+float friction = -1.00;
+Ball[] balls = new Ball[numBalls];
+
+void setup() {
+  size(1920, 1000);
+  for (int i = 0; i < numBalls; i++) {
+    balls[i] = new Ball(random(width), random(height), 100-3*i, i, balls);
+  }
+  
+
+}
+
+void draw() {
+  background(0,0);
+  for (int i = 0; i < numBalls; i++) {
+    balls[i].collide();
+    balls[i].move();
+    balls[i].display(i);
+  }
+}
+
+class Ball {
+  
+  float x, y;
+  float diameter;
+  float vx = 0;
+  float vy = 0;
+  int id;
+  Ball[] others;
+ 
+  Ball(float xin, float yin, float din, int idin, Ball[] oin) {
+    x = xin;
+    y = yin;
+    diameter = din;
+    id = idin;
+    others = oin;
+  } 
+  
+  void collide() {
+    for (int i = id + 1; i < numBalls; i++) {
+      float dx = others[i].x - x;
+      float dy = others[i].y - y;
+      float distance = sqrt(dx*dx + dy*dy);
+      float minDist = others[i].diameter/2 + diameter/2;
+      if (distance < minDist) { 
+        float angle = atan2(dy, dx);
+        float targetX = x + cos(angle) * minDist;
+        float targetY = y + sin(angle) * minDist;
+        float ax = (targetX - others[i].x) * spring;
+        float ay = (targetY - others[i].y) * spring;
+        vx -= ax;
+        vy -= ay;
+        others[i].vx += ax;
+        others[i].vy += ay;
+      }
+    }   
+  }
+  
+  void move() {
+    vy += gravity;
+    x += vx;
+    y += vy;
+    if (x + diameter/2 > width) {
+      x = width - diameter/2;
+      vx *= friction; 
+    }
+    else if (x - diameter/2 < 0) {
+      x = diameter/2;
+      vx *= friction;
+    }
+    if (y + diameter/2 > height) {
+      y = height - diameter/2;
+      vy *= friction; 
+    } 
+    else if (y - diameter/2 < 0) {
+      y = diameter/2;
+      vy *= friction;
+    }
+  }
+
+  String[] color = {#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2,#e54141,#fec423,#187eb2};
+
+  void display(int i) {
+    noStroke();
+    fill(color[i]);
+    ellipse(x, y, diameter, diameter);
+  }
+
+}
+</script>
+
+<canvas id="canv" style="border:0px;user-select: none;user-select: none;
+-webkit-user-select: none;
+-moz-user-select: none;"></canvas>
+<canvas id="canvv"></canvas>
+
+
+</body>
+</html>

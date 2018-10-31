@@ -1,0 +1,191 @@
+
+body{width:1920px; background:; height: 5000px;}
+.bgimg{margin-left:-20px; margin-top:-300px; z-index:-1000; position:absolute;}
+.login ul li{float: right; list-style: none; margin-left: 20px; font-size:0.9em; z-index:1000;}
+.login{margin-left:80%; margin-top:30px; display:inline-block;}
+nav ul{position:absolute; margin-left:550px; top:130px;}
+nav ul li{float: left; list-style: none; margin-left: 50px; font-size:1.3em;z-index:1000;}
+nav a,.login a{text-decoration:none; font; color: black;z-index:10;}
+nav a:hover{color:#FF3F3F; text-decoration:underline;}
+h1 a:hover{color:#FF3F3F; }
+h1 a{text-decoration:none;font-size: 2em; z-index: 100; color:black;}
+h1 img{width:600px;}
+h1{margin:-80px 0px 0px 0px; width:500px;}
+div.bubble{position:absolute; z-index:-100}
+.circle{fill:#ff6161;}
+line{stroke:#ff6161; stroke-width:5; text-align:}
+canvas{position: absolute;}
+#myCanvas{background-attachment: fixed;}
+#canv{z-index:1; top:250px; left:100px;}
+#canvv{z-index:-100; top: -5px; }
+#canvhash{z-index:1; top:300px; left:0px;}
+#canvas{width:1000; height:100%;   z-index: 10000;}
+#canvasarea{margin-top: 50px;}/*comp*/
+#canvasar{top:800px; float: right;}
+#chart-area{top:800px;}
+.title{margin:-60px 0 0 60px; font-size:2.5em;color:white; display: inline-block; font-family: 'BalooBhaijaan-Regular';}
+.title2{display:inline-block; margin-left: 10px; color:#555; font-size: 0.8em; font-weight:bold 700;}
+hr{width:1055px; margin-top:10px; }
+.bgcolor{margin-top:-450px; left:-10px; width: 101%; height:500px; background: #fec423; position: absolute; z-index:-10; }
+.text h5{position: absolute; left:67px; top:340px; font-size:1.2em; font-weight:bold 700; color:white;}
+.brand{margin-top: 10px; margin-left: -10px; display:block;}
+.b{background: #ff6161; width:150%; color:#ff6161; margin: 15px 0 0 -10px; font-size:1em;}
+.b a{color:#ff6161;}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    height: 200px;
+    background:url(./tt.svg);
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    border-radius: 0px;
+    padding-top:30px;
+    position: absolute;
+    z-index: 1;
+    bottom: -215px;
+    left: 55%;
+    margin-left: -60px;
+    font-size:1.5em;
+    font-family:'Roboto', sans-serif; font-weight: bold 700;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.b a:hover{
+	background: #5987c9;
+    color:#5987c9;}
+.musicch{z-index:1000000; margin-top: 100px;}
+.musicch h4{margin-left: 50px; font-size:4em;color:#fff;}
+.musi{margin-top: 50px; margin-left: 50px;}
+.mphoto{width:200px;height:200px; display:inline; float: left;}
+.value{padding-left:30px;padding-top:-10px;height:200px;display:inline-block;margin-left:10px;color:#fff;
+    animation-name: example;
+    animation-duration: 2s;}
+    @keyframes example {
+    from {width:00px;}
+    to {}
+}
+.value h3{font-size: 3em; margin-top:20px;}
+.vlaue p{font-size: 2em}
+.mphoto h3{margin-left: 10px; margin-top:5px; color:#fff; font-size: 3em; text-shadow: 2px 2px #888888;}
+.footer{margin-top: 50px; height:150px; background:#fff; margin-left: -10px;}
+.footer hr{width:1920px; margin-bottom: 40px;}
+.footer1{display: block;}
+.footer2{margin-bottom: 50px;}
+.footer1 li{font-size:0.8em; font-weight:bold; color:#777; float: left; list-style: none; margin-left:30px; margin-bottom: 30px;}
+.footer2 li{font-size:0.8em; color:#777; float: left; list-style: none; margin-left:30px; margin-bottom: 20px;}
+b{font-size:1.1em;}
+
+.brandnav a:hover{color:white; text-decoration:underline;}
+.brandwrap{margin-top:50px;}
+
+/*videochart css*/
+.cont03{position: relative; width:1930px; margin-left:-10px; margin-top:50px; }
+.w3-display-container{margin:0;}
+.silde{width:1930px;}
+.w3-display-left{margin-left: 100px; margin-top:-250px;}
+.w3-display-right{margin-right:-570px; margin-top:-250px;}
+.mySlides h3{font-size:5em; margin-left: 60px; display:inline; position:absolute; color:rgba(255,217,59,0.0);}
+.mySlides:hover h3{color:rgba(255,217,59,0.8); width:15000px;}
+.mySlides{display:inline-block;}
+
+/*Hashtag css*/
+#myChart{width:1600px; height:1300px; margin-top:150px; margin-left: 100px;}
+
+/*comparison*/
+div.compBg{background:url(./tb.jpg); width:100%; height:150px; padding-top:70px; padding-left: 350px; margin:50px 0 0 -10px;}
+.comparison h2,.comparison h3{font-size: 3em; display:inline;color:#4070c6; font-family: 'Roboto', sans-serif; font-weight: bold 700; }
+.comparison h3{color:#999; margin:0 400px;}
+.top10{margin-left:160px; margin-top:80px;}
+.top10 h2{margin:50px 0 0 30px; font-size:3em;color:#FF3F3F;}
+.comparison2{background:#ffe252; margin-top:400px;margin-left:-10px; padding-top:70px; padding-left:200px;  height:900px;}
+.comparison2 h2{font-size:3em;color:#fff;margin-bottom: 100px;}
+.cMusic{font-size:2em; color:#fff;}
+.cMusictw{;height:100px;
+    animation-name: example;
+    animation-duration: 2s;}
+    @keyframes example {
+    from {width:00px;}
+    to {}}
+    .cMusictw:hover{animation-name: examplet;
+    animation-duration: 1s;}
+    @keyframes examplet{
+    from {width:00px;}
+    to {}}
+.cMusictw h3{margin-left:20px; padding-top: 30px;}
+.cMusicbp{display:block; height:100px; margin-right:330px;margin-top:-100px; float: right;
+    animation-name: example;
+    animation-duration: 2s;}
+    @keyframes example {
+    from {width:00px;}
+    to {}}
+    .cMusicbp:hover{animation-name: examplet;
+    animation-duration: 1s;}
+    @keyframes examplet{
+    from {width:00px;}
+    to {}}
+.cMusicbp h3{float:right; margin-right:20px; margin-top:30px;}
+
+.tooltip2 {
+  
+}
+
+.tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    width: auto;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 5px;
+    font-size:0.5em;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: 800px;
+    margin-top:-70px;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+    font-family: TTNorms-Regular;
+}
+
+.tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+}
+#trends-widget-1{display:inline-block;float: left; }
+.googlet{margin-left:170px; margin-top:100px;}
+.googlet h2{margin-bottom: 100px;font-size:3em;color:#FF3F3F;}
+
+/*Byul css*/
+
+
+
+...............................................
+h1{font-family: 'Baloo Bhaijaan';}
+h2{font-family: 'Baloo Bhaijaan';}
+h3{font-family: 'Roboto', sans-serif; font-weight: bold 700;}
+.title2 h3{font-family: 'Nanum Gothic Coding', monospace; font-weight:700;}
+/*h4{font-family: 'Baloo Bhaijaan';}*/
+.musicch h4{font-family: 'Baloo Bhaijaan';}
+h5{font-family: 'Roboto', sans-serif;}
+h6{font-family: 'Roboto', sans-serif;}
+p{font-family: 'Roboto', sans-serif;}
+li{font-family: 'Roboto', sans-serif;}
+canvas:focus{  outline: none;  display:none;}
